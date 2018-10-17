@@ -28,6 +28,12 @@ namespace Template_Method
             }
         }
 
+        //Notice that the MixIngredients() and Bake() methods are abstract, while the Slice() method
+        //is virtual. This is intentional: the method by which you slice bread is not likely to change
+        //depending on the kind of bread you make.Further, the Make() method is the Template
+        //Method that gives this pattern its name.
+        //Let's extend this example by implementing several ConcreteClass objects for different types
+        //of bread
         class TwelveGrain : Bread
         {
             public override void MixIngredients()
@@ -67,6 +73,8 @@ namespace Template_Method
             }
         }
 
+        //Once we've defined a few types of bread, we can simulate making them in our Main()
+        //method, like so:
         static void Main(string[] args)
         {
             Sourdough sourdough = new Sourdough();
